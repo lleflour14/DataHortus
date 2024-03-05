@@ -1,9 +1,16 @@
 <template>
   <v-app>
+    <v-overlay
+      v-model="overlayActive"
+      scrim="rgb(58, 90, 64)"
+      opacity="solid"
+    >
+    </v-overlay>
     <!-- une barre de navigation -->
     <v-app-bar
       color="rgb(58, 90, 64)"
       density="compact">
+
       <v-img
         position="left"
         :height="100"
@@ -23,15 +30,16 @@
       
     </v-main>
   </v-app>
-  </template>
-  
-  
-  <script setup>
-  </script>
-  
-  
-  <style scoped>
-  .page{
+</template>
+
+<script setup>
+
+import { ref } from 'vue';
+const overlayActive = ref(true); // Overlay actif par défaut
+</script>
+
+<style scoped>
+.page {
   text-align: center;
-  }
-  </style>
+}
+</style>
