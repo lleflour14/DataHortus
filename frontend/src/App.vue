@@ -1,23 +1,37 @@
 <template>
-  <div  class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-      <a class="navbar-brand" href="#">Frontend</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><router-link to="/" class="nav-link">Home</router-link></li>
-            <li class="nav-item"><router-link to="/ajax" class="nav-link">Combien de pays ?</router-link></li>
-            <li class="nav-item"><router-link to="/countries" class="nav-link">Lister les pays</router-link></li>
-            <li class="nav-item"><router-link to="/ajoutePays" class="nav-link">Ajouter un pays</router-link></li>
-            <li class="nav-item"><router-link to="/about" class="nav-link">About</router-link></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <router-view />
-  </div>
-</template>
+  <v-app>
+    <!-- une barre de navigation -->
+    <v-app-bar
+      color="rgb(58, 90, 64)"
+      density="compact">
+      <v-img
+        position="left"
+        :height="100"
+        aspect-ratio="1/1"
+        src="\src\assets\mini_logo.png"
+      ></v-img>
+      <v-btn to="/Serre">Serre</v-btn>
+      <v-btn to="/Pilotage">Pilotage</v-btn>
+      <v-btn to="/Historique">Historique</v-btn>
+    </v-app-bar>
+    <!-- la zone où sera affichée les différentes "pages"-->
+    <v-main>
+      <v-container class="page">
+        <!-- les "composant view" s'afficheront ici -->
+        <RouterView />
+      </v-container>
+      
+    </v-main>
+  </v-app>
+  </template>
+  
+  
+  <script setup>
+  </script>
+  
+  
+  <style scoped>
+  .page{
+  text-align: center;
+  }
+  </style>
