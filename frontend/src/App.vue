@@ -1,25 +1,21 @@
 <template>
   <v-app>
     <v-overlay
-      v-model="overlayActive"
-      class="overlay"
+      v-model="actif"
       scrim="rgb(58, 90, 64)"
       opacity="solid"
       width="100%"
       height="100%"
       close-on-content-click
-      
     >
     <v-img
       src="/src/assets/grand_logo.png"
-      aspect-ratio="1/1"
     ></v-img>
     </v-overlay>
     <!-- une barre de navigation -->
     <v-app-bar
       color="rgb(58, 90, 64)"
       density="compact">
-
       <v-img
         position="left"
         src="\src\assets\mini_logo.png"
@@ -42,7 +38,7 @@
 
 <script setup>
 import { ref } from 'vue';
-const overlayActive = ref(true); // Overlay actif par défaut
+const actif = ref(true); // Overlay actif par défaut
 </script>
 
 <style scoped>
