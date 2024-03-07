@@ -2,9 +2,18 @@
   <v-app>
     <v-overlay
       v-model="overlayActive"
+      class="overlay"
       scrim="rgb(58, 90, 64)"
       opacity="solid"
+      width="100%"
+      height="100%"
+      close-on-content-click
+      
     >
+    <v-img
+      src="/src/assets/grand_logo.png"
+      aspect-ratio="1/1"
+    ></v-img>
     </v-overlay>
     <!-- une barre de navigation -->
     <v-app-bar
@@ -13,13 +22,12 @@
 
       <v-img
         position="left"
-        :height="100"
-        aspect-ratio="1/1"
         src="\src\assets\mini_logo.png"
       ></v-img>
-      <v-btn to="/Serre">Serre</v-btn>
-      <v-btn to="/Pilotage">Pilotage</v-btn>
-      <v-btn to="/Historique">Historique</v-btn>
+      <v-btn to="/Serre"  :ripple="false"  >Serre</v-btn>
+      <v-btn to="/Pilotage"  :ripple="false"  >Pilotage</v-btn>
+      <v-btn to="/Historique"  :ripple="false"  >Historique</v-btn>
+      <v-img src=""></v-img>
     </v-app-bar>
     <!-- la zone où sera affichée les différentes "pages"-->
     <v-main>
@@ -33,7 +41,6 @@
 </template>
 
 <script setup>
-
 import { ref } from 'vue';
 const overlayActive = ref(true); // Overlay actif par défaut
 </script>
@@ -42,4 +49,5 @@ const overlayActive = ref(true); // Overlay actif par défaut
 .page {
   text-align: center;
 }
+
 </style>
