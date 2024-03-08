@@ -24,7 +24,7 @@ li {
     align-items: center;
 }
 .txt {
-    background-color: rgb(58, 90, 64);
+    background-color: #3A5A40;
     color: white;
 }
 
