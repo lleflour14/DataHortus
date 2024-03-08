@@ -1,5 +1,7 @@
 package isis.projet.backend.entity;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -20,5 +22,5 @@ public class Mesure {
     
     @Column(unique=true)
     @NonNull
-    private Date date;
+    private DateFormatUtils date;
 }
