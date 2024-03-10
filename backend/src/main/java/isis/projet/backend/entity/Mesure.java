@@ -19,8 +19,7 @@ public class Mesure {
     private Integer id;
     // Identifiant métier (code ISO)
     @Column(unique=true)
-    @NonNull
-    private float valeur;
+    private Float valeur;
     
     @Column(unique=true)
     @NonNull

@@ -1,6 +1,8 @@
 package isis.projet.backend.service;
 
 import isis.projet.backend.dao.CapteurRepository;
+import jakarta.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,4 +14,8 @@ public class CapteurService {
     }
 
 
+    @Transactional
+    public String quelType() {
+        return capteurDao.getType();
+    }
 }
