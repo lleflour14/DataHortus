@@ -1,5 +1,2 @@
--- Initialisation des tables
-INSERT INTO Country(code, name) VALUES
-    ('FR', 'France'), -- Les clés sont auto-générées
-    ('UK', 'United Kingdom'),
-    ('US', 'United States of America');
+INSERT INTO Mesure(valeur,date) VALUES 
+    (31.1,new Date(2023,3,8));
