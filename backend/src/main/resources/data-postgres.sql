@@ -1,2 +1,4 @@
 INSERT INTO Capteur(type) VALUES 
-('Température');
+('Température'),
+('Humidité'),
+('Luminosité');
