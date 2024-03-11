@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CapteurRepository extends JpaRepository<Capteur, Integer> {
 
-    String getType();
+    // String getType();
 }
