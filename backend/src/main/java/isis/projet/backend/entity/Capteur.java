@@ -14,7 +14,7 @@ public class Capteur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique=true)
+    @Column(unique=true, name = "type")
     @NonNull
     private String type;
 }
