@@ -1,5 +1,7 @@
 package isis.projet.backend.entity;
 
+import java.sql.Date;
+
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import jakarta.persistence.*;
@@ -17,10 +19,9 @@ public class Mesure {
     private Integer id;
     // Identifiant métier (code ISO)
     @Column(unique=true)
-    @NonNull
-    private float valeur;
+    private Float valeur;
     
     @Column(unique=true)
     @NonNull
-    private DateFormatUtils date;
+    private Date date;
 }

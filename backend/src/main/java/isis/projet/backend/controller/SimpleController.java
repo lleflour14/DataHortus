@@ -1,18 +1,22 @@
 package isis.projet.backend.controller;
 
-import isis.projet.backend.service.CountryService;
+import isis.projet.backend.service.CapteurService;
 import org.springframework.web.bind.annotation.*;
 import lombok.extern.slf4j.Slf4j;
 import java.util.Map;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/rest")
 @Slf4j
+//ici toute les URLs de mon API que je voudrais appeler dans mon front
 public class SimpleController {
-    private final CountryService countryService;
+    private CapteurService CapteurService;
 
-    public SimpleController(CountryService countryService) {
-        this.countryService = countryService;
+    public SimpleController(CapteurService CapteurService) {
+        this.CapteurService = CapteurService;
     }
 
     @GetMapping("/hello")
@@ -21,12 +25,13 @@ public class SimpleController {
         return Map.of("message", "Hello, World !");
     }
 
-    @PutMapping("/combienDePays")
-    public Map<String, Long> combienDePays() {
-        log.info("Service combienDePays");
-        // On renverra un objet JSON de la forme {"combien": 123}
-        return Map.of("combien", countryService.combienDePays());
+    @GetMapping("/capteurs")
+    public Map<Integer,String> getCapteurs() {
+        log.info("test");
+        return Map.of(1,CapteurService.quelType());
     }
+    
+
 }
 
 
