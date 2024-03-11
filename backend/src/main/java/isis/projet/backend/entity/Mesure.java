@@ -1,6 +1,7 @@
 package isis.projet.backend.entity;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 
@@ -17,11 +18,17 @@ public class Mesure {
     // Identifiant technique
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
-    // Identifiant métier (code ISO)
+
+
     @Column(unique=true)
     private Float valeur;
     
-    @Column(unique=true)
+    @Column(name = "date",unique=true)
     @NonNull
-    private Date date;
+    private LocalDateTime date;
+
+    @NonNull
+    @ManyToOne(optional = false)
+    private Capteur capteur;
+    
 }
