@@ -24,7 +24,4 @@ public class Capteur {
     @NonNull
     private String grandeur;
 
-    @OneToMany (mappedBy = "capteurSource")
-    @ToString.Exclude 
-    private List<Mesure> mesures = new ArrayList<>();
 }

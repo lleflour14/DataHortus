@@ -27,8 +27,5 @@ public class Mesure {
     @NonNull
     private String dateMesure;
 
-    @NonNull
-    @ManyToOne(optional = false)
-    private Capteur capteurSource;
-    
+
 }
