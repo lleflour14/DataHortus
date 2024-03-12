@@ -5,7 +5,6 @@
 
 
 <template>
-    
     <li>
         <div class="cadreIconSerre">
             <img class="iconMesure" src="\src\assets\température.png"></img>
@@ -29,7 +28,7 @@
 
 <style>
 .iconMesure{
-    height: 100px;
+    max-height: 100px;
 }
 li {
     display: flex;
@@ -38,10 +37,15 @@ li {
 .cadreIconSerre {
     height: 100px;
     width: 100px;
+    /* marges */
+    margin: 10px;
 }
 .txt {
     background-color: #3A5A40;
     color: white;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 </style>

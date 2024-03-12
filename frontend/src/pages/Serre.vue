@@ -1,20 +1,25 @@
 <template>
 <div class="serre">
-    <ul>
+    <ul class="mesures">
     <AffichageMesure/>
     </ul>
     <!-- ligne verte claire, noshade desactive l'effet d'ombre-->
     <hr noshade>
+    <ul class="machines">
+        <AffichageActiviteMachine/>
+    </ul>
+
 </div>
 
 </template>
 
 <script setup>
 import AffichageMesure from "../components/AffichageMesure.vue";
+import AffichageActiviteMachine from "../components/AffichageActiviteMachine.vue";
 </script>
 
 <style>
-ul {
+.mesures {
     display: inline-block;
 }
 hr {
@@ -25,4 +30,9 @@ hr {
     position: relative; 
     left: -50%;    /*pour faire depasser la ligne à gauche*/
 }
+.machine{
+    display: inline-block;
+}
+
+
 </style>
