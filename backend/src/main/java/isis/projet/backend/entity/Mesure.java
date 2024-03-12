@@ -25,10 +25,10 @@ public class Mesure {
     
     @Column(name = "date",unique=true)
     @NonNull
-    private LocalDateTime date;
+    private String dateMesure;
 
     @NonNull
     @ManyToOne(optional = false)
-    private Capteur capteursource;
+    private Capteur capteurSource;
     
 }
