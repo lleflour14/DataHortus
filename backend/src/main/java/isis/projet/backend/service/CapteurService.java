@@ -14,8 +14,4 @@ public class CapteurService {
     }
 
 
-    @Transactional
-    public String quelType() {
-        return capteurDao.getType();
-    }
 }

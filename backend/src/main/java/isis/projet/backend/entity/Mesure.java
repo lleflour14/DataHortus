@@ -29,6 +29,6 @@ public class Mesure {
 
     @NonNull
     @ManyToOne(optional = false)
-    private Capteur capteur;
+    private Capteur capteursource;
     
 }
