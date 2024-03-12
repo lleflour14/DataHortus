@@ -23,9 +23,14 @@ public class Mesure {
     @Column(unique=true)
     private Float valeur;
     
-    @Column(name = "date",unique=true)
+    @Column(unique=true,name = "DATEMESURE")
     @NonNull
     private String dateMesure;
+
+
+    @NonNull
+    @ManyToOne(optional = false) // obligatoire, la clé étrangère ne doit pas être nulle
+    private Capteur capteur;
 
 
 }
