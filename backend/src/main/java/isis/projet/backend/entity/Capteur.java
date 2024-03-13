@@ -24,4 +24,7 @@ public class Capteur {
     @NonNull
     private String grandeur;
 
+    @OneToMany(mappedBy = "capteur")
+    private List<Mesure> mesures = new ArrayList<>();
+
 }

@@ -12,6 +12,6 @@ import org.springframework.data.repository.query.Param;
 public interface MesureRepository extends JpaRepository<Mesure, Integer> {
         public Mesure findById(int mesureId);
 
-        // @Query("SELECT m FROM Mesure m WHERE m.capteur = :capteur")
-        //List<Mesure> trouverMesuresParCapteur(Integer capteur_id);
+        List<Mesure> findByCapteur(Capteur capteur);
+        
 }

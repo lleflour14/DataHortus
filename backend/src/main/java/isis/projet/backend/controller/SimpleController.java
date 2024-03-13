@@ -32,10 +32,11 @@ public class SimpleController {
         return Map.of("message", "Hello, World !");
     }
 
-    // @GetMapping("/mesures/{capteurs}")
-    // public ResponseEntity<List<Mesure>> getMesuresParGrandeur(@PathVariable(name = "capteur") final Capteur capteur) {
+    // @GetMapping("/capteurs/{id_capteur}/mesures")
+    // public ResponseEntity<List<Mesure>> getMesuresParGrandeur(@PathVariable(name = "id_capteur") final Integer id_capteur) {
     //     log.info("Obtenir toute les mesures d'une grandeur");
-    //     final List<Mesure> mesures =  mesureService.getMesuresParGrandeur(capteur);
+    //     for()
+    //     final List<Mesure> mesures =  mesureService.getMesuresParGrandeur();
     //     return new ResponseEntity<>(mesures, HttpStatus.OK);
     // }
     
