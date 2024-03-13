@@ -31,6 +31,4 @@ public class Mesure {
     @NonNull
     @ManyToOne(optional = false) // obligatoire, la clé étrangère ne doit pas être nulle
     private Capteur capteur;
-
-
 }

@@ -2,8 +2,7 @@ package isis.projet.backend.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
+import java.util.Optional;
 
 import jakarta.persistence.*;
 
@@ -24,7 +23,11 @@ public class Capteur {
     @NonNull
     private String grandeur;
 
+    //obtenir une liste de mesures pour chaque grandeur
     @OneToMany(mappedBy = "capteur")
     private List<Mesure> mesures = new ArrayList<>();
 
+    public Optional<List<Mesure>> getMesures(){
+        return Optional.ofNullable(mesures);
+    }
 }

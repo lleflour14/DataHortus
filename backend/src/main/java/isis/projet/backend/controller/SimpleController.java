@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 
 @RestController
@@ -32,15 +33,15 @@ public class SimpleController {
         return Map.of("message", "Hello, World !");
     }
 
-    // @GetMapping("/capteurs/{id_capteur}/mesures")
-    // public ResponseEntity<List<Mesure>> getMesuresParGrandeur(@PathVariable(name = "id_capteur") final Integer id_capteur) {
-    //     log.info("Obtenir toute les mesures d'une grandeur");
-    //     for()
-    //     final List<Mesure> mesures =  mesureService.getMesuresParGrandeur();
-    //     return new ResponseEntity<>(mesures, HttpStatus.OK);
-    // }
+    //je veux toute les mesures pour une certaine grandeur
+    @GetMapping("/capteurs/{id_capteur}/mesures")
+    public ResponseEntity<List<Mesure>> getMesuresParGrandeur(@PathVariable(name = "id_capteur") final Integer id_capteur) {
+        log.info("Obtenir toute les mesures d'une grandeur");
+        final Optional<Capteur> capteurSource = capteurService.getCapteurById(id_capteur);
+        List<Mesure> mesures = capteurSource.getMesures();
+        return new ResponseEntity<>(mesures, HttpStatus.OK);
+    }
     
-
 }
 
 

@@ -19,8 +19,4 @@ public class MesureService {
         this.mesureDao = mesureDao;
     }
 
-    public List<Mesure> getMesuresParGrandeur(final Capteur capt_source){
-        return mesureDao.findByCapteur(capt_source);
-    }
-    
 }

@@ -16,7 +16,8 @@ public class CapteurService {
         this.capteurDao = capteurDao;
     }
 
-    public Optional<Capteur> getBookById(final int capteur_Id) {
+    //obtenir le capteur par l'ID
+    public Optional<Capteur> getCapteurById(final int capteur_Id) {
         return capteurDao.findById(capteur_Id);
     }
 }
