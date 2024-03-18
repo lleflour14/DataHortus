@@ -1,33 +1,37 @@
 <template>
     <!--Form-->
     <div class="bouttonsDaffichage">
-      <button type="button" for="automatique" class="boutonPage actif" @click="afficher()">Automatique</button>
-      <button type="button" for="manuel" class="boutonPage cache" @click="afficher()">Manuel</button>
+      <button type="button" for="automatique" class="boutonPage automatique actif" @click="afficherAutomatique()">Automatique</button>
+      <button type="button" for="manuel" class="boutonPage manuel" @click="afficherManuel()">Manuel</button>
 
     </div>
     <div class="form-u">
       <div class="form" id="automatique">
-        <p class="test">aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <p class="test">auto</p>
       </div>
       <div class="form" style="display:none;" id="manuel">
-        <p class="test">bbbbbbbbbbbbbbbbbbbbbbbbb</p>
+        <p class="test">manu</p>
       </div>
     </div>
 </template>
 
 <script setup>
-function afficher() { //permet de changer le contenu de la page
-    const nouvelActif = document.querySelector(".boutonPage.cache");
-    const ancienActif = document.querySelector(".boutonPage.actif");
 
-    nouvelActif.classList.remove("cache");
-    nouvelActif.classList.add("actif");
-
-    ancienActif.classList.remove("actif");
-    ancienActif.classList.add("cache");
-
-    document.querySelector(`#${ancienActif.getAttribute("for")}`).style.display = "none";
-    document.querySelector(`#${nouvelActif.getAttribute("for")}`).style.display = "";
+function afficherAutomatique() { //permet de changer le contenu de la page
+    const auto = document.querySelector(".boutonPage.automatique");
+    const manuel = document.querySelector(".boutonPage.manuel");
+    manuel.classList.remove("actif");
+    auto.classList.add("actif");
+    document.querySelector(`#${manuel.getAttribute("for")}`).style.display = "none";
+    document.querySelector(`#${auto.getAttribute("for")}`).style.display = "";
+}
+function afficherManuel() { //permet de changer le contenu de la page
+    const auto = document.querySelector(".boutonPage.automatique");
+    const manuel = document.querySelector(".boutonPage.manuel");
+    auto.classList.remove("actif");
+    manuel.classList.add("actif");
+    document.querySelector(`#${auto.getAttribute("for")}`).style.display = "none";
+    document.querySelector(`#${manuel.getAttribute("for")}`).style.display = "";
 }
 </script>
 <style>
@@ -57,8 +61,7 @@ function afficher() { //permet de changer le contenu de la page
 
 /* Bouton actif */
 
-.bouttonsDaffichage .actif,
-.boutonPage:hover {
+.bouttonsDaffichage .actif {
   background-color: #3A5A40;
   color: white;
 }
