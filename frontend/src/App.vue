@@ -30,10 +30,10 @@
     </v-app-bar>
     <!-- la zone où sera affichée les différentes "pages"-->
     <v-main>
-      <v-container class="page">
+      <div class="page">
         <!-- les "composant view" s'afficheront ici -->
         <RouterView />
-      </v-container> 
+      </div> 
     </v-main>
   </v-app>
 </template>

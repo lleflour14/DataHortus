@@ -9,13 +9,13 @@
         <div class="cadreIconSerre">
             <img class="iconMesure" src="\src\assets\température.png"></img>
         </div>
-        <p class="txt">température</p>
+        <p class="txt">Température : 17°C</p>
     </li>
     <li>
         <div class="cadreIconSerre">
             <img class="iconMesure" src="\src\assets\humidité.png"></img>
         </div>
-        <p class="txt">humidité</p>
+        <p class="txt">Humidité : 12%</p>
     </li>
     <li>
         <div class="cadreIconSerre">
@@ -46,6 +46,7 @@ li {
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    width: 300px;
 }
 
 </style>

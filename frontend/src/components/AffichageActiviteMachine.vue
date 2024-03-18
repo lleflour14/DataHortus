@@ -9,31 +9,31 @@
         <div class="cadreIconMachines">
             <img class="iconMachine" src="\src\assets\volet_fermé.png"></img>
         </div>
-        <p class="actif">Eteint</p>
+        <p class="actif">Fermé</p>
     </li>
     <li class="LigneMachine">
         <div class="cadreIconMachines">
             <img class="iconMachine" src="\src\assets\lumière_éteinte.png"></img>
         </div>
-        <p class="actif">Eteint</p>
+        <p class="actif">Éteint</p>
     </li>
     <li class="LigneMachine">
         <div class="cadreIconMachines">
             <img class="iconMachine" src="\src\assets\ventilateur_éteint.png"></img>
         </div>
-        <p class="actif">Eteint</p>
+        <p class="actif">Éteint</p>
     </li>
     <li class="LigneMachine">
         <div class="cadreIconMachines">
             <img class="iconMachine" src="\src\assets\chauffage_éteint.png"></img>
         </div>
-        <p class="actif">Eteint</p>
+        <p class="actif">Éteint</p>
     </li>
     <li class="LigneMachine">
         <div class="cadreIconMachines">
             <img class="iconMachine" src="\src\assets\arrosage_éteind.png"></img>
         </div>
-        <p class="actif">Eteint</p>
+        <p class="actif">Éteint</p>
     </li>
 </template>
 
