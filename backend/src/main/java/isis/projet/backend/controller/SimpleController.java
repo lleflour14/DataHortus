@@ -34,13 +34,13 @@ public class SimpleController {
     }
 
     //je veux toute les mesures pour une certaine grandeur
-    @GetMapping("/capteurs/{id_capteur}/mesures")
-    public ResponseEntity<List<Mesure>> getMesuresParGrandeur(@PathVariable(name = "id_capteur") final Integer id_capteur) {
-        log.info("Obtenir toute les mesures d'une grandeur");
-        final Optional<Capteur> capteurSource = capteurService.getCapteurById(id_capteur);
-        List<Mesure> mesures = capteurSource.getMesures();
-        return new ResponseEntity<>(mesures, HttpStatus.OK);
-    }
+    // @GetMapping("/capteurs/{id_capteur}/mesures")
+    // public ResponseEntity<List<Mesure>> getMesuresParGrandeur(@PathVariable(name = "id_capteur") final Integer id_capteur) {
+    //     log.info("Obtenir toute les mesures d'une grandeur");
+    //     final Optional<Capteur> capteurSource = capteurService.getCapteurById(id_capteur);
+    //     List<Mesure> mesures = capteurSource.getMesures();
+    //     return new ResponseEntity<>(mesures, HttpStatus.OK);
+    // }
     
 }
 
