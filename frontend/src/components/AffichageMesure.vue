@@ -50,7 +50,6 @@ function getMesures(urlM,liste){
       return response.json();
     })
     .then((dataJSON) => {
-      console.log(dataJSON._embedded.mesures);
       for (let mes of dataJSON._embedded.mesures){
         liste.push(new Mesure(mes.id, mes.valeur,mes.dateMesure));
             }
@@ -60,9 +59,20 @@ function getMesures(urlM,liste){
 }
 
 
+//récup la dernière valeur
+// function getDerniere(liste){
+//     console.log(liste.lenght)
+//     for (let mes in liste){
+//         console.log("test")
+//     }
+// }
+// getDerniere(listCapt)
+// console.log(listCapt)
+
 onMounted(() => {
     getCapteurs();
 });
+console.log(listeG_Temp)
 </script>
 
 
@@ -71,19 +81,19 @@ onMounted(() => {
         <div class="cadreIconSerre">
             <img class="iconMesure" src="\src\assets\température.png"></img>
         </div>
-        <p class="txt">Température : 17°C</p>
+        <p class="txt" v-if="listeG_Temp.length > 0">Température : {{listeG_Temp[listeG_Temp.length - 1].valeur}}°C</p>
     </li>
     <li>
         <div class="cadreIconSerre">
             <img class="iconMesure" src="\src\assets\humidité.png"></img>
         </div>
-        <p class="txt">Humidité : 12%</p>
+        <p class="txt" v-if="listeG_Hum.length > 0">Humidité : {{listeG_Hum[listeG_Hum.length - 1].valeur}}%</p>
     </li>
     <li>
         <div class="cadreIconSerre">
             <img class="iconMesure" src="\src\assets\luminosité.png"></img>
         </div>
-        <p class="txt">luminosité</p>
+        <p class="txt" v-if="listeG_Lum.length > 0">luminosité : {{listeG_Lum[listeG_Lum.length - 1].valeur}}%</p>
     </li>
     
 </template>
