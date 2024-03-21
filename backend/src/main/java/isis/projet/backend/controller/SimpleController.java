@@ -13,6 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 
 
 @RestController
@@ -33,7 +36,7 @@ public class SimpleController {
         return Map.of("message", "Hello, World !");
     }
 
-    //je veux toute les mesures pour une certaine grandeur
+    // je veux toute les mesures pour une certaine grandeur
     // @GetMapping("/capteurs/{id_capteur}/mesures")
     // public ResponseEntity<List<Mesure>> getMesuresParGrandeur(@PathVariable(name = "id_capteur") final Integer id_capteur) {
     //     log.info("Obtenir toute les mesures d'une grandeur");
@@ -41,6 +44,16 @@ public class SimpleController {
     //     List<Mesure> mesures = capteurSource.getMesures();
     //     return new ResponseEntity<>(mesures, HttpStatus.OK);
     // }
+
+    // URL - http://localhost:8989/api/capteurs
+    @GetMapping(value = "capteurs")
+    public  ResponseEntity<List<Capteur>> getCapteurs() {
+        log.info("obtenir tous les capteurs de la BD.");
+        final Iterable<Capteur> capteurIterable = capteurService.getCapteurs();
+        final List<Capteur> books = StreamSupport.stream(capteurIterable.spliterator(), false).collect(Collectors.toList());
+        return new ResponseEntity<>(books, HttpStatus.OK);
+    }
+    
     
 }
 

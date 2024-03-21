@@ -20,4 +20,8 @@ public class CapteurService {
     public Optional<Capteur> getCapteurById(final int capteur_Id) {
         return capteurDao.findById(capteur_Id);
     }
+
+    public Iterable<Capteur> getCapteurs() {
+        return capteurDao.findAll();
+    }
 }
